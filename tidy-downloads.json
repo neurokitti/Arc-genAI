@@ -1,0 +1,25 @@
+{
+  "temperature": 0,
+  "response_format": {
+    "type": "text"
+  },
+  "stream_options": {
+    "include_usage": true
+  },
+  "max_tokens": 1000,
+  "feature": "renameDownloads",
+  "stream": true,
+  "isDev": false,
+  "model": "gpt-4o-mini",
+  "version": 2,
+  "messages": [
+    {
+      "content": "I am downloading a file. Rewrite its filename to be helpful, concise and readable. 2-4 words.\n- Keep informative names mostly the same. For non-informative names, add information from the tab title or website.\n- Remove machine-generated cruft, like IDs, (1), (copy), etc.\n- Clean up messy text, especially dates. Make timestamps concise, human readable, and remove seconds.\n- Clean up text casing and letter spacing to make it easier to read.\n\nSome examples, in the form \"original name, tab title, domain -> new name\"\n- 'Arc-1.6.0-41215.dmg', 'Arc from The Browser Company', 'arc.net' -> 'Arc 1.6.0 41215.dmg' (same info, easier to read)\n- 'swift-chat-main.zip', 'huggingface/swift-chat: Mac app to demonstrate swift-transformers', 'github.com' -> 'swift-chat main.zip' (same info, easier to read)\n- 'folio_option3_6691488.PDF', 'Your Guest Stay Folio from the LINE LA 08-14-23', 'mail.google.com' -> 'Line LA Folio, Aug 14.pdf' (remove ID numbers, make easier to read, add helpful info from tab title)\n- 'image.png', 'Feedback: Card border radius - nateparro2t@gmail.com - Gmail', 'mail.google.com' -> 'Card border radius feedback.png' (remove non-useful words like 'image', add helpful info from tab title)\n- 'Brooklyn_Bridge_September_2022_008.jpg', 'nyc bridges - Google Images', 'images.google.com' -> 'Brooklyn Bridge Sept 2022.jpg' (keep useful information, clean up formatting, remove '008' ID)\n- 'AdobeStock_184679416.jpg', 'ladybug - Google Images', 'images.google.com' -> 'Ladybug.jpg' (add info from title, remove 'AdobeStock' cruft)\n- 'CleanShot 2023-08-17 at 19.51.05@2x.png', 'dogfooding - The Browser Company - Slack', 'app.slack.com' -> 'CleanShot Aug 17 from dogfooding.png' (keep useful info, trim date, add source from title)\n- 'Screenshot 2023-09-26 at 11.12.18 PM', 'DM with Nate - Twitter', 'twitter.com' -> 'Sept 26 Screenshot from Nate.png' (keep useful info, trim date, add source from title)\n- 'image0.png', 'Nate - Slack', 'files.slack.com' -> 'Image from Nate via Slack.png' (add info from title)\n\nReturn a response using JSON, according to this schema:\n```\n{\n    newName: string // The new filename\n}\n```\n\nWrite responses (but not JSON keys) in English.",
+      "role": "system"
+    },
+    {
+      "content": "Original filename: 'psychology.webp'\nSource domain: 'simplypsychology.org'\nSource tab title: 'psychology - Google Search'",
+      "role": "user"
+    }
+  ]
+}
