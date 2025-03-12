@@ -1,0 +1,29 @@
+{
+  "response_format": {
+    "type": "text"
+  },
+  "temperature": 0,
+  "model": "ft:gpt-3.5-turbo-1106:the-browser-company::8fknnUIa",
+  "stream_options": {
+    "include_usage": true
+  },
+  "stream": true,
+  "messages": [
+    {
+      "content": "You are a meticulous expert organizer who follows instructions concisely.\nI have some tabs! Please help me sort them into groups.\n\nI'll provide you with a list of tabs, with their IDs (e.g. google.com/3), their titles, and the tab they were opened from if applicable (e.g. ↳ google.com/0).\nThink about the groupings of my browsing, and then choose a descriptive group name for each.\nGroup based on keywords in common, domain, website purpose, and referring tab. If a tab has a unique keyword in common with tabs in a group, include it in that group. Use the unique keyword in the group name.\nSome tabs may be in a group of their own, but you should try to find include each tab in a group if possible.\n\nFor example, if these were my tabs:\n```\ngoogle.com/0: nitehawk cinema - Google Search\namazon.com/0: Amazon: Amazing Deals on Home Goods, Gifts and More\ngoogle.com/1 toaster reviews wirecutter\ntoasttech.com/0 What you should look for in buying a toaster ↳ google.com/1\ncalendar.google.com/0 June 25 | Weekly View\npavilion.com/0: Barbie Movie | Pavilion Theater\n```\n\nYou would output:",
+      "role": "system"
+    },
+    {
+      "role": "system",
+      "content": "```\n[[\"google.com\\/0\",\"Movies\"],[\"amazon.com\\/0\",\"Toaster Shopping\"],[\"google.com\\/1\",\"Toaster Shopping\"],[\"toasttech.com\\/0\",\"Toaster Shopping\"],[\"calendar.google.com\\/0\",\"Calendar\"],[\"pavilion.com\\/0\",\"Movies\"]]\n```"
+    },
+    {
+      "role": "user",
+      "content": "Here are my tabs, in the format 'id: title':\nasdef.org/0: African Social Development Focus\nasdef.org/1: African Social Development Focus\nasdef.org/2: African Social Development Focus\nasdef.org/3: African Social Development Focus\ngoogle.com_asdef.org/0: sets\nmonkeytype.com/0: Monkeytype | A minimalistic, customizab…\nYour array of group assignments, as valid JSON within a ```code block```:"
+    }
+  ],
+  "max_tokens": 3000,
+  "isDev": false,
+  "feature": "groupTabs",
+  "version": 2
+}
