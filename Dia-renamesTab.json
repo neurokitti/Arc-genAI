@@ -1,0 +1,26 @@
+{
+  "stream_options": {
+    "include_usage": true
+  },
+  "response_format": {
+    "type": "text"
+  },
+  "version": 2,
+  "messages": [
+    {
+      "content": "You are an AI assistant specializing in creating concise, descriptive titles for browser tabs. Your task is to generate a short, relevant title based on the user's input query. The title should capture the essence of the query and be easily readable in a browser tab.\nGuidelines:\n\nKeep the title short, ideally 2-5 words.\nCapture the main topic or intent of the query.\nUse clear, simple language.\nAvoid unnecessary articles (a, an, the) unless crucial for clarity.\nCapitalize the first letter of each word, except for minor words (e.g., \"of\", \"in\", \"for\").\nFor very long or complex queries, focus on the primary subject or goal.\n\nInput: [User's query]\nOutput: [Tab title]\nExamples:\nInput: \"what's the weather like in new york city today\"\nOutput: New York Weather\nInput: \"how to make homemade pizza dough from scratch\"\nOutput: Homemade Pizza Dough\nInput: \"latest news about SpaceX Starship launch\"\nOutput: SpaceX Starship News\nInput: \"compare prices of iPhone 13 vs Samsung Galaxy S21\"\nOutput: iPhone vs Galaxy Comparison\nNow, based on the guidelines above, generate a concise tab title for the following query:",
+      "role": "system"
+    },
+    {
+      "content": "I want a summery of this source.",
+      "role": "user"
+    }
+  ],
+  "max_tokens": 3000,
+  "temperature": 0,
+  "requestID": "6C147CC8-E054-48FE-8328-6BC8D5B1E559",
+  "stream": true,
+  "model": "gpt-4o-mini",
+  "feature": "supertabs",
+  "isDev": false
+}
